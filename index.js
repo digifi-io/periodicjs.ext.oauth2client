@@ -2,11 +2,11 @@
 const periodic = require('periodicjs');
 const capitalize = require('capitalize');
 const OAuth2Strategy = require('passport-oauth2').Strategy;
-const passport = periodic.locals.extensions.get('periodicjs.ext.passport').passport;
-const passportExtSettings = periodic.settings.extensions['periodicjs.ext.passport'];
+const passport = periodic.locals.extensions.get('@digifi/periodicjs.ext.passport').passport;
+const passportExtSettings = periodic.settings.extensions['@digifi/periodicjs.ext.passport'];
 const passportExtOAuth2Clients = passportExtSettings.oauth.oauth2client;
 const utilities = require('./utilities');
-const oauth2clientExtConfig = periodic.extensions.get('periodicjs.ext.oauth2client');
+const oauth2clientExtConfig = periodic.extensions.get('@digifi/periodicjs.ext.oauth2client');
 const logger = periodic.logger;
 
 module.exports = () => {
@@ -38,7 +38,7 @@ module.exports = () => {
       // console.log({ oauth2clientExtConfig });
 
       periodic.status.on('configuration-complete', () => {
-        const clients = periodic.settings.extensions[ 'periodicjs.ext.passport' ].oauth.oauth2client;
+        const clients = periodic.settings.extensions[ '@digifi/periodicjs.ext.passport' ].oauth.oauth2client;
         utilities.oauth.create_client_auth_headers({ clients })
           .then(() => {
             logger.silly('initialized client auth headers');

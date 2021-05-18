@@ -5,12 +5,12 @@ const csrf = require('csurf');
 const capitalize = require('capitalize');
 const authRouter = periodic.express.Router();
 const controllers = require('../controllers');
-const passportControllers = periodic.controllers.extension.get('periodicjs.ext.passport');
+const passportControllers = periodic.controllers.extension.get('@digifi/periodicjs.ext.passport');
 const utilities = require('../utilities');
-const passportExtSettings = periodic.settings.extensions['periodicjs.ext.passport'];
+const passportExtSettings = periodic.settings.extensions['@digifi/periodicjs.ext.passport'];
 const passportExtOAuth2Clients = passportExtSettings.oauth.oauth2client;
 // const periodicRoutingUtil = periodic.utilities.routing;
-const passport = periodic.locals.extensions.get('periodicjs.ext.passport').passport;
+const passport = periodic.locals.extensions.get('@digifi/periodicjs.ext.passport').passport;
 
 if (passportExtSettings.passport.use_csrf) {
   authRouter.use(csrf());

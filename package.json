@@ -72,16 +72,16 @@
       "email": "yaw.etse@gmail.com"
     }
   ],
-  "name": "periodicjs.ext.oauth2client",
+  "name": "@digifi/periodicjs.ext.oauth2client",
   "optionalDependencies": {},
   "repository": {
     "type": "git",
     "url": "git://github.com/typesettin/periodicjs.ext.oauth2client.git"
   },
   "scripts": {
-    "postinstall": "cd ../../ && periodicjs aex periodicjs.ext.oauth2client",
-    "postuninstall": "cd ../../ && periodicjs rex periodicjs.ext.oauth2client",
+    "postinstall": "cd ../../ && periodicjs aex @digifi/periodicjs.ext.oauth2client",
+    "postuninstall": "cd ../../ && periodicjs rex @digifi/periodicjs.ext.oauth2client",
     "test": "mocha -R spec --recursive"
   },
-  "version": "9.1.0"
+  "version": "9.2.0"
 }
